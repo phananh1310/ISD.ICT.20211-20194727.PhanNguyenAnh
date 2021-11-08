@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="PaymentMethodPane" prefHeight="680.0" prefWidth="767.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="checkOutSubScreen.paymentMethodController">
+   <children>
+      <VBox prefHeight="733.0" prefWidth="961.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="590.0" prefWidth="732.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                        <RadioButton mnemonicParsing="false" text="RadioButton" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="204.0" prefWidth="219.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                        <TextField>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                        <TextField />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                        <TextField />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                        <TextField />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" text="Confirm Payment" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
