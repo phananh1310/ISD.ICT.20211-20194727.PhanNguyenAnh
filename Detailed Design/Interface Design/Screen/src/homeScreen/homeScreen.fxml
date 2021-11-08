@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homeScreen.Controller">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+         <center>
+            <ScrollPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <content>
+                  <VBox alignment="CENTER" prefHeight="800.0" prefWidth="1150.0" style="-fx-background-color: white;">
+                     <padding>
+                        <Insets left="60.0" top="40.0" />
+                     </padding>
+                     <children>
+                        <StackPane fx:id="stackPane" style="-fx-background-color: white;">
+                           <children>
+                              <AnchorPane fx:id="anchorPaneOfStackPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <ImageView fx:id="Image1" fitHeight="400.0" fitWidth="1100.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../AIMSImage/Media/header.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </StackPane>
+                        <AnchorPane style="-fx-background-color: white;">
+                           <children>
+                              <ImageView fx:id="Image2" fitHeight="400.0" fitWidth="1100.0" pickOnBounds="true" preserveRatio="true" x="150.0">
+                                 <image>
+                                    <Image url="@../AIMSImage/Media/sale.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <HBox>
+                           <children>
+                              <VBox prefHeight="800.0" prefWidth="580.0">
+                                 <children>
+                                    <AnchorPane prefHeight="400.0" prefWidth="550.0" style="-fx-background-color: white;">
+                                       <children>
+                                          <VBox prefHeight="400.0" prefWidth="550.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <ImageView fx:id="Image3" fitHeight="300.0" fitWidth="554.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../AIMSImage/Media/happ%20music.jpg" />
+                                                   </image>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" />
+                                                   </VBox.margin>
+                                                </ImageView>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Happy Music CD" textAlignment="CENTER" wrappingWidth="547.19921875">
+                                                   <font>
+                                                      <Font size="36.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="400.0" prefWidth="550.0" style="-fx-background-color: white;">
+                                       <children>
+                                          <VBox prefHeight="400.0" prefWidth="550.0" style="-fx-background-color: white;">
+                                             <children>
+                                                <ImageView fx:id="Image4" fitHeight="300.0" fitWidth="550.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../AIMSImage/Media/book.jpg" />
+                                                   </image>
+                                                   <VBox.margin>
+                                                      <Insets left="35.0" />
+                                                   </VBox.margin>
+                                                </ImageView>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Best Selling Book" textAlignment="CENTER" wrappingWidth="547.19921875">
+                                                   <font>
+                                                      <Font size="36.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <AnchorPane prefHeight="400.0" prefWidth="550.0" style="-fx-background-color: white;">
+                                       <children>
+                                          <VBox prefHeight="400.0" prefWidth="550.0" style="-fx-background-color: white;">
+                                             <children>
+                                                <ImageView fx:id="Image5" fitHeight="300.0" fitWidth="550.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../AIMSImage/Media/cambridge-13-final.png" />
+                                                   </image>
+                                                   <VBox.margin>
+                                                      <Insets left="120.0" />
+                                                   </VBox.margin>
+                                                </ImageView>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="IELTS Book" textAlignment="CENTER" wrappingWidth="547.19921875" x="50.0">
+                                                   <font>
+                                                      <Font size="36.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="400.0" prefWidth="550.0" style="-fx-background-color: white;">
+                                       <children>
+                                          <VBox prefHeight="400.0" prefWidth="550.0" style="-fx-background-color: white;">
+                                             <children>
+                                                <ImageView fx:id="Image6" fitHeight="300.0" fitWidth="550.0" pickOnBounds="true" preserveRatio="true" x="50.0">
+                                                   <image>
+                                                      <Image url="@../AIMSImage/Media/CD.jpg" />
+                                                   </image>
+                                                   <VBox.margin>
+                                                      <Insets left="50.0" />
+                                                   </VBox.margin>
+                                                </ImageView>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Old but Gold" textAlignment="CENTER" wrappingWidth="547.19921875">
+                                                   <font>
+                                                      <Font size="36.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </center>
+         <bottom>
+            <HBox prefHeight="54.0" prefWidth="1200.0" style="-fx-border-color: Black;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-background-color: white;" text="Shop All" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="140.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-color: white;" text="CD" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="140.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-color: white;" text="DVD" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="140.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-color: white;" text="Book" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="140.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-color: white;" text="Sale" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="140.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </bottom>
+         <top>
+            <HBox prefHeight="67.0" prefWidth="1200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="75.0" style="-fx-background-color: white;" text="&lt;">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="75.0" style="-fx-background-color: white;">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../AIMSImage/home_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Button>
+                  <TextField prefHeight="42.0" prefWidth="568.0" text="search">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="50.0" top="15.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="75.0" style="-fx-background-color: white;">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../AIMSImage/search_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="75.0" style="-fx-background-color: white;">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../AIMSImage/favourite_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="75.0" style="-fx-background-color: white;">
+                     <graphic>
+                        <ImageView fitHeight="15050.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../AIMSImage/cart_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="15.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+   </children>
+</StackPane>
