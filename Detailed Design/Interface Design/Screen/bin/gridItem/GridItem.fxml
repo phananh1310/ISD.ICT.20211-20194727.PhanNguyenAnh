@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gridItem.ItemController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="300.0" style="-fx-background-image: white;">
+         <children>
+            <ImageView fx:id="imageView" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../AIMS%20Image/Media/cambridge-13-final.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="Name of product">
+               <font>
+                  <Font name="Times New Roman" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Text>
+            <Text fx:id="available" fill="#75706e" strokeType="OUTSIDE" strokeWidth="0.0" text="Available 0">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Text>
+            <Text fx:id="price" strokeType="OUTSIDE" strokeWidth="0.0" text="100 $">
+               <font>
+                  <Font name="Times New Roman" size="28.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Text>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
