@@ -10,4 +10,12 @@
 			<item value="C:\Users\USER\OneDrive - Hanoi University of Science and Technology\20211\ISD-20211\Lab\ISD.ICT.20211-20194727.PhanNguyenAnh\Detailed Design\Interface Design"/>
 		</list>
 	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="619"/>
+		<item key="DIALOG_Y_ORIGIN" value="274"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
 </section>
