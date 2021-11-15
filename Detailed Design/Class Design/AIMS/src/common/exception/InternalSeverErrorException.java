@@ -1,5 +1,5 @@
 package common.exception;
 
-public class InternalSeverErrorException {
+public class InternalSeverErrorException extends Exception{
 
 }
