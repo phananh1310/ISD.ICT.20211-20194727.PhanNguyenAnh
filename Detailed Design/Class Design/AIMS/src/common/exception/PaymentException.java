@@ -1,5 +1,5 @@
 package common.exception;
 
-public class PaymentException {
+public class PaymentException extends Exception {
 
 }
