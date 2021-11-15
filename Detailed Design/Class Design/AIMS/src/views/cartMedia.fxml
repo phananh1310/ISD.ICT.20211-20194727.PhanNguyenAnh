@@ -10,39 +10,58 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cartItem.CartItemController">
    <children>
-      <HBox layoutX="122.0" layoutY="83.0" prefHeight="250.0" prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox layoutX="122.0" layoutY="83.0" prefHeight="250.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: white; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fx:id="imageView" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imageView" fitHeight="300.0" fitWidth="345.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
-                  <Insets left="20.0" top="25.0" />
+                  <Insets left="20.0" top="20.0" />
                </HBox.margin>
             </ImageView>
-            <VBox prefHeight="348.0" prefWidth="174.0">
+            <VBox prefHeight="338.0" prefWidth="180.0" spacing="10.0">
                <children>
                   <Button fx:id="name" mnemonicParsing="false" style="-fx-background-color: white;" text="Product Name">
                      <font>
                         <Font name="Times New Roman" size="24.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="20.0" />
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
                   </Button>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type" textAlignment="CENTER" wrappingWidth="58.77978515625">
+                  <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="174.0" spacing="20.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type" wrappingWidth="58.77978515625">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                     </children>
                      <VBox.margin>
-                        <Insets top="10.0" />
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" textAlignment="CENTER" wrappingWidth="82.97509765625">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="174.0" spacing="20.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" wrappingWidth="58.77978515625">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
                      <VBox.margin>
-                        <Insets top="10.0" />
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
+                  </HBox>
                   <HBox>
                      <children>
                         <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: white; -fx-border-color: black;" text="-" />
@@ -64,7 +83,7 @@
                   </Button>
                </children>
                <HBox.margin>
-                  <Insets left="40.0" />
+                  <Insets />
                </HBox.margin>
             </VBox>
             <Text fx:id="price" strokeType="OUTSIDE" strokeWidth="0.0" text="20$" textAlignment="RIGHT" wrappingWidth="127.8125">
@@ -72,10 +91,13 @@
                   <Font size="36.0" />
                </font>
                <HBox.margin>
-                  <Insets left="200.0" top="20.0" />
+                  <Insets left="150.0" />
                </HBox.margin>
             </Text>
          </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
       </HBox>
    </children>
 </AnchorPane>
