@@ -1,5 +1,5 @@
 package common.exception;
 
-public class UnrecognizedException {
+public class UnrecognizedException extends Exception{
 
 }
