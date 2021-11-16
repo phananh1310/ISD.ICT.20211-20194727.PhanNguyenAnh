@@ -1,5 +1,5 @@
 package common.exception;
 
-public class MediaNotUpdateException {
+public class MediaNotUpdateException extends Exception {
 
 }

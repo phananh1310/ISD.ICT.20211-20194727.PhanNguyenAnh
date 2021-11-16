@@ -1,5 +1,5 @@
 package common.exception;
 
-public class ViewCartException {
+public class ViewCartException extends Exception {
 
 }

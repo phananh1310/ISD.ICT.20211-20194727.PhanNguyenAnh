@@ -1,5 +1,5 @@
 package common.exception;
 
-public class InvalidCardException {
+public class InvalidCardException extends Exception {
 
 }

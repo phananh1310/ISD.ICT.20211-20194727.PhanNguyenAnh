@@ -1,5 +1,5 @@
 package common.exception;
 
-public class NotEnoughTransactionInfoException {
+public class NotEnoughTransactionInfoException extends Exception {
 
 }

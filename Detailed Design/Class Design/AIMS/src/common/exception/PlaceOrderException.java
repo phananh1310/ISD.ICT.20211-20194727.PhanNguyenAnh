@@ -1,5 +1,5 @@
 package common.exception;
 
-public class PlaceOrderException {
+public class PlaceOrderException extends Exception {
 
 }

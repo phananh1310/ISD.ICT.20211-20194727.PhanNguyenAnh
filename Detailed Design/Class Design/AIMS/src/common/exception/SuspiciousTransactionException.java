@@ -1,5 +1,5 @@
 package common.exception;
 
-public class SuspiciousTransactionException {
+public class SuspiciousTransactionException extends Exception {
 
 }

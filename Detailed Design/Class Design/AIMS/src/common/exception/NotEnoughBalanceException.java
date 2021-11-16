@@ -1,5 +1,5 @@
 package common.exception;
 
-public class NotEnoughBalanceException {
+public class NotEnoughBalanceException extends Exception {
 
 }

@@ -1,5 +1,5 @@
 package common.exception;
 
-public class InvalidDeliveryInfoException {
+public class InvalidDeliveryInfoException extends Exception {
 
 }

@@ -1,5 +1,5 @@
 package common.exception;
 
-public class InvalidTransactionAmountException {
+public class InvalidTransactionAmountException extends Exception {
 
 }

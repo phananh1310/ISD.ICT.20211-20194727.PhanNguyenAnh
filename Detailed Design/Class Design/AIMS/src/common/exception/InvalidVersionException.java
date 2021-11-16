@@ -1,5 +1,5 @@
 package common.exception;
 
-public class InvalidVersionException {
+public class InvalidVersionException extends Exception {
 
 }
