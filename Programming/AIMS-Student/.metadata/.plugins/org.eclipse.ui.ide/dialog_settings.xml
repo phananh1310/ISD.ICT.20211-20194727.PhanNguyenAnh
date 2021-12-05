@@ -6,6 +6,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\USER\OneDrive - Hanoi University of Science and Technology\20211\ISD-20211\Lab\ISD.ICT.20211-20194727.PhanNguyenAnh\Programming"/>
+			<item value="C:\Users\USER\OneDrive - Hanoi University of Science and Technology\20211\ISD-20211\Lab\ISD.ICT.20211-20194727.PhanNguyenAnh\Programming\AIMS-Student"/>
 			<item value="C:\Users\USER\Desktop\Aims sample code\AIMS-Student\src"/>
 			<item value="C:\Users\USER\Desktop\Aims sample code\AIMS-Student"/>
 		</list>
