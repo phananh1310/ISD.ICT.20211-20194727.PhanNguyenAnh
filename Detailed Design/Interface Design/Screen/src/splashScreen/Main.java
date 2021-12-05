@@ -1,4 +1,4 @@
-package slashScreen;
+package splashScreen;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;  
