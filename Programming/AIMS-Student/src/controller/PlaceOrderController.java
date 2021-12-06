@@ -82,19 +82,39 @@ public class PlaceOrderController extends BaseController{
     	
     }
     
-    public boolean validatePhoneNumber(String phoneNumber) {
-    	// TODO: your work
-    	return false;
+    public static boolean validatePhoneNumber(String phoneNumber) {
+    	if (phoneNumber.length()!=10) return false;
+    	if (!phoneNumber.startsWith("0")) return false;
+    	try {
+    		Integer.parseInt(phoneNumber);
+    	} catch (NumberFormatException e) {
+    		return false;
+    	}
+    	return true;
     }
     
-    public boolean validateName(String name) {
-    	// TODO: your work
-    	return false;
+    public static boolean validateName(String name) {
+    	if (name == null)
+    		return false;
+    	for (char ch : name.toCharArray()) {
+    		if (!Character.isLetter(ch)) {
+    		  return false;
+    		}
+    	}
+    	return true;
     }
     
-    public boolean validateAddress(String address) {
-    	// TODO: your work
-    	return false;
+    public static boolean validateAddress(String address) {
+    	if (address==null)
+    		return false;
+    	for (char ch : address.toCharArray()) {
+    		if (ch == ' ') 
+    			continue; // skip blank
+    		if (!Character.isLetter(ch)&&!Character.isDigit(ch)) {
+    			return false;
+    		}
+    	}
+    	return true;
     }
     
 
