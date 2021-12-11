@@ -10,10 +10,13 @@ import java.util.logging.Logger;
 import entity.cart.Cart;
 import entity.cart.CartMedia;
 import common.exception.InvalidDeliveryInfoException;
+import common.exception.MediaNotAvailableException;
 import entity.invoice.Invoice;
 import entity.order.Order;
 import entity.order.OrderMedia;
+import utils.Configs;
 import views.screen.popup.PopupScreen;
+import views.screen.shipping.ShippingScreenHandler;
 
 /**
  * This class controls the flow of place order usecase in our AIMS project
@@ -24,7 +27,7 @@ public class PlaceOrderController extends BaseController{
     /**
      * Just for logging purpose
      */
-    private static Logger LOGGER = utils.Utils.getLogger(PlaceOrderController.class.getName());
+    protected static Logger LOGGER = utils.Utils.getLogger(PlaceOrderController.class.getName());
 
     /**
      * This method checks the avalibility of product when user click PlaceOrder button
@@ -79,10 +82,18 @@ public class PlaceOrderController extends BaseController{
    * @throws IOException
    */
     public void validateDeliveryInfo(HashMap<String, String> info) throws InterruptedException, IOException{
-    	
+
+    if (!(validateName(info.get("name"))))
+		throw new InvalidDeliveryInfoException("Wrong name");
+    		
+	if (!(validatePhoneNumber(info.get("phone"))))
+		throw new InvalidDeliveryInfoException("Wrong phone number");
+			
+	if (!(validateAddress(info.get("address"))))
+		throw new InvalidDeliveryInfoException("Wrong address");
     }
     
-    public static boolean validatePhoneNumber(String phoneNumber) {
+    public static boolean validatePhoneNumber(String phoneNumber)  {
     	if (phoneNumber.length()!=10) return false;
     	if (!phoneNumber.startsWith("0")) return false;
     	try {
@@ -94,9 +105,11 @@ public class PlaceOrderController extends BaseController{
     }
     
     public static boolean validateName(String name) {
-    	if (name == null)
+    	if (name == "")
     		return false;
     	for (char ch : name.toCharArray()) {
+    		if (ch == ' ') 
+    			continue; // skip blank
     		if (!Character.isLetter(ch)) {
     		  return false;
     		}
@@ -105,7 +118,7 @@ public class PlaceOrderController extends BaseController{
     }
     
     public static boolean validateAddress(String address) {
-    	if (address==null)
+    	if (address=="")
     		return false;
     	for (char ch : address.toCharArray()) {
     		if (ch == ' ') 

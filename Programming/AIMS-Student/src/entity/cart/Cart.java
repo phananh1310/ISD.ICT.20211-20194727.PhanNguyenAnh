@@ -72,5 +72,24 @@ public class Cart {
         }
         return null;
     }
+    
+	/**
+	* This method check if current Cart has Media that supports RushOrder
+	*
+	* @return boolean
+	*/
+	public void checkRushOrderMedia() throws SQLException {
+		if (!(this.getListSupportCartMedia().size() > 0))
+			throw new MediaNotAvailableException("Some media not available for rushOrder");
+	}
+
+	public List<CartMedia> getListSupportCartMedia() {
+		List<CartMedia> lstSupportCartMedia = new ArrayList<CartMedia>();
+		for (CartMedia t: lstCartMedia) {
+			if (t.getMedia().isSupportRushOrder())
+				lstSupportCartMedia.add(t);
+		}
+		return lstSupportCartMedia;
+	}
 
 }

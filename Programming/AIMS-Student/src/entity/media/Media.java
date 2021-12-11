@@ -27,6 +27,7 @@ public class Media {
     protected int quantity;
     protected String type;
     protected String imageURL;
+    protected boolean supported = true;
 
     public Media() throws SQLException{
         stm = AIMSDB.getConnection().createStatement();
@@ -166,6 +167,10 @@ public class Media {
             ", type='" + type + "'" +
             ", imageURL='" + imageURL + "'" +
             "}";
-    }    
+    }
+
+	public boolean isSupportRushOrder() {
+		return supported;
+	}    
 
 }

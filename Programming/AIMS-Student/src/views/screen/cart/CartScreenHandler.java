@@ -10,9 +10,11 @@ import java.util.logging.Logger;
 import common.exception.MediaNotAvailableException;
 import common.exception.PlaceOrderException;
 import controller.PlaceOrderController;
+import controller.PlaceRushOrderController;
 import controller.ViewCartController;
 import entity.cart.CartMedia;
 import entity.order.Order;
+import entity.order.RushOrder;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -53,6 +55,9 @@ public class CartScreenHandler extends BaseScreenHandler {
 
 	@FXML
 	private Button btnPlaceOrder;
+	
+	@FXML
+	private Button btnPlaceRushOrder;
 
 	public CartScreenHandler(Stage stage, String screenPath) throws IOException {
 		super(stage, screenPath);
@@ -131,6 +136,32 @@ public class CartScreenHandler extends BaseScreenHandler {
 			displayCartWithMediaAvailability();
 		}
 	}
+	
+	public void requestToPlaceRushOrder() throws SQLException, IOException {
+		try {
+		// create placeRushOrderController and process the order
+		PlaceRushOrderController placeRushOrderController = new PlaceRushOrderController();
+		
+		placeRushOrderController.placeRushOrder();
+
+		// create order
+		RushOrder rushOrder = placeRushOrderController.createRushOrder(); // Rush Order
+		Order order = placeRushOrderController.createOrder(); // Normal Order
+		// display shipping form
+		ShippingScreenHandler ShippingScreenHandler = new ShippingScreenHandler(this.stage, Configs.SHIPPING_SCREEN_PATH, order, rushOrder);
+		ShippingScreenHandler.setPreviousScreen(this);
+		ShippingScreenHandler.setHomeScreenHandler(homeScreenHandler);
+		ShippingScreenHandler.setScreenTitle("Shipping Screen for Rush Order");
+		ShippingScreenHandler.setBController(placeRushOrderController);
+		ShippingScreenHandler.show();
+
+		} catch (MediaNotAvailableException e) {
+			// if some media is not supported
+			PopupScreen.error(e.getMessage());
+			return;
+		}
+	}
+	
 
 	public void updateCart() throws SQLException{
 		getBController().checkAvailabilityOfProduct();

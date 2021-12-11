@@ -4,12 +4,16 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import controller.PlaceOrderController;
+import controller.PlaceRushOrderController;
 import common.exception.InvalidDeliveryInfoException;
+import entity.cart.Cart;
 import entity.invoice.Invoice;
 import entity.order.Order;
+import entity.order.RushOrder;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXML;
@@ -23,6 +27,7 @@ import utils.Configs;
 import views.screen.BaseScreenHandler;
 import views.screen.invoice.InvoiceScreenHandler;
 import views.screen.popup.PopupScreen;
+import views.screen.rushOrder.RushOrderScreenHandler;
 
 public class ShippingScreenHandler extends BaseScreenHandler implements Initializable {
 
@@ -45,10 +50,19 @@ public class ShippingScreenHandler extends BaseScreenHandler implements Initiali
 	private ComboBox<String> province;
 
 	private Order order;
+	
+	private RushOrder rushOrder; // only supported media
+	private Order normalOrder; // only none supported media
 
 	public ShippingScreenHandler(Stage stage, String screenPath, Order order) throws IOException {
 		super(stage, screenPath);
 		this.order = order;
+	}
+
+	public ShippingScreenHandler(Stage stage, String shippingScreenPath, Order normalOrder, RushOrder rushOrder) throws IOException {
+		super(stage, shippingScreenPath);
+		this.normalOrder = normalOrder;
+		this.rushOrder = rushOrder;
 	}
 
 	@Override
@@ -77,26 +91,52 @@ public class ShippingScreenHandler extends BaseScreenHandler implements Initiali
 			// process and validate delivery info
 			getBController().processDeliveryInfo(messages);
 		} catch (InvalidDeliveryInfoException e) {
-			throw new InvalidDeliveryInfoException(e.getMessage());
+			PopupScreen.error(e.getMessage());
+			return;
 		}
 	
-		// calculate shipping fees
-		int shippingFees = getBController().calculateShippingFee(order);
-		order.setShippingFees(shippingFees);
-		order.setDeliveryInfo(messages);
+		if (rushOrder==null) {
+			// calculate shipping fees
+			int shippingFees=0;
+			shippingFees = getBController().calculateShippingFee(order);
+			order.setShippingFees(shippingFees);
+			order.setDeliveryInfo(messages);
 		
-		// create invoice screen
-		Invoice invoice = getBController().createInvoice(order);
-		BaseScreenHandler InvoiceScreenHandler = new InvoiceScreenHandler(this.stage, Configs.INVOICE_SCREEN_PATH, invoice);
-		InvoiceScreenHandler.setPreviousScreen(this);
-		InvoiceScreenHandler.setHomeScreenHandler(homeScreenHandler);
-		InvoiceScreenHandler.setScreenTitle("Invoice Screen");
-		InvoiceScreenHandler.setBController(getBController());
-		InvoiceScreenHandler.show();
+		
+			// create invoice screen
+			Invoice invoice = getBController().createInvoice(order);
+		
+			BaseScreenHandler InvoiceScreenHandler = new InvoiceScreenHandler(this.stage, Configs.INVOICE_SCREEN_PATH, invoice);
+			InvoiceScreenHandler.setPreviousScreen(this);
+			InvoiceScreenHandler.setHomeScreenHandler(homeScreenHandler);
+			InvoiceScreenHandler.setScreenTitle("Invoice Screen");
+			InvoiceScreenHandler.setBController(getBController());
+			InvoiceScreenHandler.show();
+		}
+		else {
+			int shippingFees=0;
+			shippingFees = getBController().calculateShippingFee(normalOrder);
+			shippingFees += ((PlaceRushOrderController) getBController()).calculateRushOrderShippingFee(rushOrder);
+			
+			order = new Order();
+			order.setDeliveryInfo(messages);
+			order.setShippingFees(shippingFees);
+			order.setlstOrderMedia(Cart.getCart().getListMedia());
+		
+			BaseScreenHandler RushOrderScreenHandler = new RushOrderScreenHandler(this.stage, Configs.RUSH_ORDER_PATH, order);
+			RushOrderScreenHandler.setPreviousScreen(this);
+			RushOrderScreenHandler.setHomeScreenHandler(homeScreenHandler);
+			RushOrderScreenHandler.setScreenTitle("Rush Order Screen");
+			RushOrderScreenHandler.setBController(getBController());
+			RushOrderScreenHandler.show();
+		}
 	}
 
 	public PlaceOrderController getBController(){
-		return (PlaceOrderController) super.getBController();
+		if (rushOrder==null)
+			return (PlaceOrderController) super.getBController();
+		else 
+			return (PlaceRushOrderController) super.getBController();
 	}
 
 	public void notifyError(){
