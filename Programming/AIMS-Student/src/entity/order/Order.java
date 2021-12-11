@@ -11,6 +11,7 @@ public class Order {
     private int shippingFees;
     private List lstOrderMedia;
     private HashMap<String, String> deliveryInfo;
+    private boolean isRushOrder = false;
 
     public Order(){
         this.lstOrderMedia = new ArrayList<>();
@@ -60,5 +61,13 @@ public class Order {
         }
         return (int) (amount + (Configs.PERCENT_VAT/100)*amount);
     }
+
+	public boolean isRushOrder() {
+		return isRushOrder;
+	}
+
+	public void setRushOrder(boolean isRushOrder) {
+		this.isRushOrder = isRushOrder;
+	}
 
 }

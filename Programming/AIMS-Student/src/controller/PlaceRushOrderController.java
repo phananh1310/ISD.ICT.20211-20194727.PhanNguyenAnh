@@ -94,6 +94,7 @@ public class PlaceRushOrderController extends PlaceOrderController {
 	* @return boolean
 	*/
 	public static boolean validateRushTime(String time) {
+		if (time=="") return false;
 		if (time.isEmpty()) return true;
 		try {
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");

@@ -3,6 +3,7 @@ package views.screen.shipping;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -13,6 +14,7 @@ import common.exception.InvalidDeliveryInfoException;
 import entity.cart.Cart;
 import entity.invoice.Invoice;
 import entity.order.Order;
+import entity.order.OrderMedia;
 import entity.order.RushOrder;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -51,7 +53,7 @@ public class ShippingScreenHandler extends BaseScreenHandler implements Initiali
 
 	private Order order;
 	
-	private RushOrder rushOrder; // only supported media
+	private RushOrder rushOrder = null; // only supported media
 	private Order normalOrder; // only none supported media
 
 	public ShippingScreenHandler(Stage stage, String screenPath, Order order) throws IOException {
@@ -121,8 +123,14 @@ public class ShippingScreenHandler extends BaseScreenHandler implements Initiali
 			order = new Order();
 			order.setDeliveryInfo(messages);
 			order.setShippingFees(shippingFees);
-			order.setlstOrderMedia(Cart.getCart().getListMedia());
-		
+			order.setRushOrder(true);
+			
+			List<OrderMedia> list = new ArrayList<OrderMedia>();
+			list.addAll(normalOrder.getlstOrderMedia());
+			list.addAll(rushOrder.getlstOrderMedia());
+			order.setlstOrderMedia(list);
+			
+			
 			BaseScreenHandler RushOrderScreenHandler = new RushOrderScreenHandler(this.stage, Configs.RUSH_ORDER_PATH, order);
 			RushOrderScreenHandler.setPreviousScreen(this);
 			RushOrderScreenHandler.setHomeScreenHandler(homeScreenHandler);

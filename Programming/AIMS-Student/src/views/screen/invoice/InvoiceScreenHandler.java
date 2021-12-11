@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import utils.Configs;
@@ -24,36 +25,47 @@ import views.screen.payment.PaymentScreenHandler;
 public class InvoiceScreenHandler extends BaseScreenHandler {
 
 	private static Logger LOGGER = Utils.getLogger(InvoiceScreenHandler.class.getName());
-
 	@FXML
-	private Label pageTitle;
+    private Label instructions;
 
-	@FXML
-	private Label name;
+    @FXML
+    private Label shippingFees;
 
-	@FXML
-	private Label phone;
+    @FXML
+    private Label address;
 
-	@FXML
-	private Label province;
+    @FXML
+    private Label pageTitle;
 
-	@FXML
-	private Label address;
+    @FXML
+    private Label delivery_instructions;
 
-	@FXML
-	private Label instructions;
+    @FXML
+    private ScrollPane vboxIte;
 
-	@FXML
-	private Label subtotal;
+    @FXML
+    private Label total;
 
-	@FXML
-	private Label shippingFees;
+    @FXML
+    private Label province;
 
-	@FXML
-	private Label total;
+    @FXML
+    private Label phone;
 
-	@FXML
-	private VBox vboxItems;
+    @FXML
+    private Label subtotal;
+
+    @FXML
+    private Label name;
+
+    @FXML
+    private VBox vboxItems;
+
+    @FXML
+    private Label time;
+
+    @FXML
+    private GridPane rushOrderGridPane;
 
 	private Invoice invoice;
 
@@ -69,11 +81,23 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 		province.setText(deliveryInfo.get("province"));
 		instructions.setText(deliveryInfo.get("instructions"));
 		address.setText(deliveryInfo.get("address"));
+		
+		// check if there is rushOrder
+		if (invoice.getOrder().isRushOrder()) {
+			rushOrderGridPane.setVisible(true);
+			time.setText(deliveryInfo.get("time"));
+			delivery_instructions.setText(deliveryInfo.get("delivery_instructions"));
+		}
+		
+		
 		subtotal.setText(Utils.getCurrencyFormat(invoice.getOrder().getAmount()));
 		shippingFees.setText(Utils.getCurrencyFormat(invoice.getOrder().getShippingFees()));
+
 		int amount = invoice.getOrder().getAmount() + invoice.getOrder().getShippingFees();
 		total.setText(Utils.getCurrencyFormat(amount));
 		invoice.setAmount(amount);
+		
+
 		invoice.getOrder().getlstOrderMedia().forEach(orderMedia -> {
 			try {
 				MediaInvoiceScreenHandler mis = new MediaInvoiceScreenHandler(Configs.INVOICE_MEDIA_SCREEN_PATH);

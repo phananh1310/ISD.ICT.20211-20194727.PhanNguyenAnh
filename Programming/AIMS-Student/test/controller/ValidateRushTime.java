@@ -24,6 +24,8 @@ class ValidateRushTime {
 		"13/10/2001 08:30,false",
 		"2022/11/10 05:30,false",
 		"2022/10/32 08:30,false",
+		"13/10 08:30,false",
+		"2022/11/10 08,false",
 
 		
 	})

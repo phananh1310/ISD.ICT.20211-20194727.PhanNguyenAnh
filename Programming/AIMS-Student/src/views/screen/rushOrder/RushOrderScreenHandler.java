@@ -2,6 +2,7 @@ package views.screen.rushOrder;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
@@ -20,6 +21,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import utils.Configs;
 import views.screen.BaseScreenHandler;
@@ -59,28 +61,33 @@ public class RushOrderScreenHandler extends BaseScreenHandler implements Initial
 	}
     
     @FXML
-    void submitRushOrder(ActionEvent event) throws IOException, InterruptedException {
+    void submitRushOrder(MouseEvent event) throws IOException, InterruptedException, SQLException {
     	// add info to messages
+
     	HashMap messages = new HashMap<>();
     	messages.put("time", time.getText());
     	messages.put("instructions", instructions.getText());
     	try {
     		// process and validate rush order info
     		getBController().processRushOrderInfo(messages);
-    			} catch (InvalidRushOrderInfoException e) {
-    				PopupScreen.error(e.getMessage());
-    				return;
-    			}
-    		
-    			
-    			// create invoice screen
-    			Invoice invoice = getBController().createInvoice(rushOrder);
-    			BaseScreenHandler InvoiceScreenHandler = new InvoiceScreenHandler(this.stage, Configs.INVOICE_SCREEN_PATH, invoice);
-    			InvoiceScreenHandler.setPreviousScreen(this);
-    			InvoiceScreenHandler.setHomeScreenHandler(homeScreenHandler);
-    			InvoiceScreenHandler.setScreenTitle("Invoice Screen");
-    			InvoiceScreenHandler.setBController(getBController());
-    			InvoiceScreenHandler.show();
+    	} catch (InvalidRushOrderInfoException e) {
+    		PopupScreen.error(e.getMessage());
+    		return;
+    	}
+    	
+    	
+    	// create invoice screen
+    	rushOrder.getDeliveryInfo().put("time",time.getText());
+    	rushOrder.getDeliveryInfo().put("delivery_instructions", instructions.getText());
+    	
+    	Invoice invoice = getBController().createInvoice(rushOrder);
+    	
+    	BaseScreenHandler InvoiceScreenHandler = new InvoiceScreenHandler(this.stage, Configs.INVOICE_SCREEN_PATH, invoice);
+    	InvoiceScreenHandler.setPreviousScreen(this);
+    	InvoiceScreenHandler.setHomeScreenHandler(homeScreenHandler);
+    	InvoiceScreenHandler.setScreenTitle("Invoice Screen");
+    	InvoiceScreenHandler.setBController(getBController());
+    	InvoiceScreenHandler.show();
     }
     
     public PlaceRushOrderController getBController(){
