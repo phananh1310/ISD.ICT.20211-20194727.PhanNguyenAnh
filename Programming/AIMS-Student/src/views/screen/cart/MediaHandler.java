@@ -20,6 +20,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import utils.Configs;
 import utils.Utils;
 import views.screen.FXMLScreenHandler;
@@ -54,6 +55,8 @@ public class MediaHandler extends FXMLScreenHandler {
 
 	@FXML
 	protected Button btnDelete;
+    @FXML
+    private Text rushOrderText;
 
 	private CartMedia cartMedia;
 	private Spinner<Integer> spinner;
@@ -68,6 +71,10 @@ public class MediaHandler extends FXMLScreenHandler {
 	public void setCartMedia(CartMedia cartMedia) {
 		this.cartMedia = cartMedia;
 		setMediaInfo();
+	}
+	
+	public void setRushOrderText() {
+		rushOrderText.setVisible(true);
 	}
 
 	private void setMediaInfo() {

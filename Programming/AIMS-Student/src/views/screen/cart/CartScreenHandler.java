@@ -195,7 +195,8 @@ public class CartScreenHandler extends BaseScreenHandler {
 				CartMedia cartMedia = (CartMedia) cm;
 				MediaHandler mediaCartScreen = new MediaHandler(Configs.CART_MEDIA_PATH, this);
 				mediaCartScreen.setCartMedia(cartMedia);
-
+				if (((CartMedia) cm).getMedia().isSupportRushOrder())
+					mediaCartScreen.setRushOrderText();
 				// add spinner
 				vboxCart.getChildren().add(mediaCartScreen.getContent());
 			}

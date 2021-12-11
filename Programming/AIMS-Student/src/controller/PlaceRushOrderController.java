@@ -79,8 +79,9 @@ public class PlaceRushOrderController extends PlaceOrderController {
 	* @return shippingFee
 	*/
 	public int calculateRushOrderShippingFee(RushOrder rushOrder) {
+	// + 10 for each product support rush order 
 	Random rand = new Random();
-	int fees = (int) (((rand.nextFloat() * 10) / 100) * rushOrder.getAmount()) + rushOrder.getlstOrderMedia().size() * 10000;
+	int fees = (int) (((rand.nextFloat() * 10) / 100) * rushOrder.getAmount()) + rushOrder.getlstOrderMedia().size() * 10;
 	LOGGER.info("Order Amount: " + rushOrder.getAmount() + " -- Shipping Fees: " + fees);
 	return fees;
 	}

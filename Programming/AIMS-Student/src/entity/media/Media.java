@@ -27,8 +27,17 @@ public class Media {
     protected int quantity;
     protected String type;
     protected String imageURL;
-    protected boolean supported = true;
-
+    // set supported for rushOrder by random
+    protected boolean supported = random();
+ 
+    private boolean random() {
+    	boolean supported = true;
+        int random = (int)(Math.random() * 2) + 0;
+        if (random==1)
+        	supported=false;
+        return supported;
+    }
+    
     public Media() throws SQLException{
         stm = AIMSDB.getConnection().createStatement();
     }
@@ -40,7 +49,7 @@ public class Media {
         this.price = price;
         this.quantity = quantity;
         this.type = type;
-
+        
         //stm = AIMSDB.getConnection().createStatement();
     }
 

@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import utils.Utils;
 import views.screen.FXMLScreenHandler;
 
@@ -40,6 +41,9 @@ public class MediaInvoiceScreenHandler extends FXMLScreenHandler{
     @FXML
     private Label price;
 
+    @FXML
+    private Text rushOrder;
+  
     private OrderMedia orderMedia;
 
     public MediaInvoiceScreenHandler(String screenPath) throws IOException{
@@ -59,6 +63,10 @@ public class MediaInvoiceScreenHandler extends FXMLScreenHandler{
 		image.setPreserveRatio(false);
 		image.setFitHeight(90);
 		image.setFitWidth(83);
+    }
+    
+    public void setRushOrderText() throws SQLException{
+        rushOrder.setVisible(true);
     }
 
 }

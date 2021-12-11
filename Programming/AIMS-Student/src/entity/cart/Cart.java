@@ -80,7 +80,7 @@ public class Cart {
 	*/
 	public void checkRushOrderMedia() throws SQLException {
 		if (!(this.getListSupportCartMedia().size() > 0))
-			throw new MediaNotAvailableException("Some media not available for rushOrder");
+			throw new MediaNotAvailableException("No supported Media for Rush Order");
 	}
 
 	public List<CartMedia> getListSupportCartMedia() {

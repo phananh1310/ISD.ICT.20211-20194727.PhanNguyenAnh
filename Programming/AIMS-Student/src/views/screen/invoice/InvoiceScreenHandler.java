@@ -102,6 +102,8 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 			try {
 				MediaInvoiceScreenHandler mis = new MediaInvoiceScreenHandler(Configs.INVOICE_MEDIA_SCREEN_PATH);
 				mis.setOrderMedia((OrderMedia) orderMedia);
+				if (invoice.getOrder().isRushOrder()&&((OrderMedia) orderMedia).getMedia().isSupportRushOrder())
+					mis.setRushOrderText();
 				vboxItems.getChildren().add(mis.getContent());
 			} catch (IOException | SQLException e) {
 				System.err.println("errors: " + e.getMessage());
