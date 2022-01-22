@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.junit.jupiter.params.ParameterizedTest"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.params.provider.CsvSource"/>
+    <fullyQualifiedTypeName name="entity.cart.CartMedia"/>
+    <fullyQualifiedTypeName name="entity.order.Order"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+    <fullyQualifiedTypeName name="java.time.format.DateTimeParseException"/>
+    <fullyQualifiedTypeName name="utils.Configs"/>
+    <fullyQualifiedTypeName name="common.exception.InvalidDeliveryInfoException"/>
+    <fullyQualifiedTypeName name="common.exception.PlaceOrderException"/>
+    <fullyQualifiedTypeName name="javafx.event.ActionEvent"/>
+    <fullyQualifiedTypeName name="entity.order.RushOrder"/>
+    <fullyQualifiedTypeName name="controller.PlaceRushOrderController"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="entity.cart.Cart"/>
+    <fullyQualifiedTypeName name="views.screen.rushOrder.RushOrderScreenHandler"/>
+    <fullyQualifiedTypeName name="common.exception.InvalidRushOrderInfoException"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="javafx.scene.input.MouseEvent"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="controller.PlaceOrderController"/>
+    <fullyQualifiedTypeName name="entity.order.OrderMedia"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="javafx.scene.layout.GridPane"/>
+    <fullyQualifiedTypeName name="javafx.scene.text.Text"/>
+    <fullyQualifiedTypeName name="java.net.ProtocolException"/>
+    <fullyQualifiedTypeName name="entity.payment.CreditCard"/>
+    <fullyQualifiedTypeName name="subsystem.interbank.InterbankSubsystemController"/>
+    <fullyQualifiedTypeName name="entity.payment.PaymentTransaction"/>
+</qualifiedTypeNameHistroy>

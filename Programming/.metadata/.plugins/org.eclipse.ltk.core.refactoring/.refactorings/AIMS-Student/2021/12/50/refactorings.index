@@ -1,0 +1,20 @@
+1638706453168	Delete element
+1638727079404	Move compilation units
+1638727155446	Rename type 'validateAddressTest'
+1638727165215	Rename type 'validateNameTest'
+1638781106064	Rename type 'API'
+1638781375861	Extract method 'setupConnection'
+1638782160464	Inline local variable 'line_api_url'
+1638782211728	Move field
+1638782216881	Move method
+1638782222095	Move method
+1638782228095	Move method
+1638782233267	Delete element
+1639134490599	Rename type 'PlaceRúhOrderController'
+1639214806897	Rename compilation unit 'MediaNotSupported.java'
+1639214858206	Delete element
+1639215645690	Rename type 'AllTests'
+1639215912036	Move compilation unit
+1639219042068	Encapsulate field 'time'
+1639222748205	Delete element
+1639230060456	Encapsulate field 'isRushOrder'
