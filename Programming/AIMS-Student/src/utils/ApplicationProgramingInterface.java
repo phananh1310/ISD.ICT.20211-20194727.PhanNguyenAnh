@@ -37,9 +37,10 @@ public class ApplicationProgramingInterface {
 
 	private static void allowMethods(String... methods) {
 		try {
+	
 			Field methodsField = HttpURLConnection.class.getDeclaredField("methods");
 			methodsField.setAccessible(true);
-	
+		
 			Field modifiersField = Field.class.getDeclaredField("modifiers");
 			modifiersField.setAccessible(true);
 			modifiersField.setInt(methodsField, methodsField.getModifiers() & ~Modifier.FINAL);
@@ -49,7 +50,7 @@ public class ApplicationProgramingInterface {
 			methodsSet.addAll(Arrays.asList(methods));
 			String[] newMethods = methodsSet.toArray(new String[0]);
 	
-			methodsField.set(null/* static field */, newMethods);
+			//methodsField.set(null/* static field */, newMethods);
 		} catch (NoSuchFieldException | IllegalAccessException e) {
 			throw new IllegalStateException(e);
 		}
