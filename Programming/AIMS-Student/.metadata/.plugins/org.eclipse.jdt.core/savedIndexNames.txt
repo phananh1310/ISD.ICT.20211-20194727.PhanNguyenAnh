@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\Users\USER\OneDrive - Hanoi University of Science and Technology\20211\ISD-20211\Lab\ISD.ICT.20211-20194727.PhanNguyenAnh\Programming\AIMS-Student\.metadata\.plugins\org.eclipse.jdt.core
